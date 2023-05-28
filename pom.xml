@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.yhp.STB</groupId>
-    <artifactId>STB</artifactId>
-    <version>21.1.1.0</version>
+    <artifactId>ROOT</artifactId>
+   <!-- <version>21.1.1.0</version>-->
     <packaging>war</packaging>
     <name>STB</name>
     <description>Demo project for Spring Boot</description>
