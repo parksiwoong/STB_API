@@ -11,7 +11,7 @@
     <groupId>dev.yhp.STB</groupId>
     <artifactId>STB</artifactId>
     <version>21.1.1.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>STB</name>
     <description>Demo project for Spring Boot</description>
     <!-- <properties>
