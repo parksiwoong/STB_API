@@ -121,7 +121,18 @@
             <artifactId>bcrypt</artifactId>
             <version>0.9.0</version>
         </dependency>
-
+        <!--파일 업로드 라이브러리-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!--이미지 크기 변환 라이브러리-->
+        <dependency>
+            <groupId>org.imgscalr</groupId>
+            <artifactId>imgscalr-lib</artifactId>
+            <version>4.2</version>
+        </dependency>
         <!-- ... security other dependency elements ... -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
