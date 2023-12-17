@@ -1,16 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: siwoongpark
-  Date: 2022/12/22
-  Time: 11:41 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-      <title>Title</title>
-  </head>
-  <body>
-  <input type="file">등록</body>
-  </body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+</head>
+<body>
+<h1>file upload</h1>
+<form method="post" action="/file/write" enctype="multipart/form-data">
+  <input type="file" name="uploadfile" multiple="multiple">
+  <input type="submit">
+  <div class="form-group" align="left">
+    <label for="subject">파일:</label>
+    <input type="file" class="form-control-file border" name="upfile" multiple="multiple">
+  </div>
+</form>
+</body>
 </html>
