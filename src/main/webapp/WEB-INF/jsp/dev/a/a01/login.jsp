@@ -51,7 +51,8 @@
                         </div>
                         <div class="icon">
                             <img src="${pageContext.request.contextPath}/img/kakao_logo.png" alt="kakaologo">
-                            <a href="#">카카오</a>
+                         <%--   <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=e00c43844fd59c675337d27c0d3947a7">카카오</a>--%>
+                            <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=e00c43844fd59c675337d27c0d3947a7&redirect_uri=http://localhost:82/auth/kakao/callback">카카오</a>
                         </div>
                         <div class="icon">
                             <img src="${pageContext.request.contextPath}/img/facebook_logo.png" alt="facebooklogo">
