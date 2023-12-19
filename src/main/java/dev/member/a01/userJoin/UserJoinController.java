@@ -1,13 +1,10 @@
-package dev.a.a01.userJoin;
+package dev.member.a01.userJoin;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -51,7 +48,14 @@ public class UserJoinController {
         return hm;
     }
 
-    /** 가입 완료 */
+    /**
+     * 회원가입
+     * @param request
+     * @param redirct
+     * @param vo
+     * @param session
+     *
+     * */
     @RequestMapping("/memberSave")
     public ModelAndView _userJoinSave(HttpServletRequest request, RedirectAttributes redirct, UserJoinVo vo, HttpSession session) throws Exception {
         int resultCnt = 1;

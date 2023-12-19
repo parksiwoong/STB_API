@@ -1,4 +1,4 @@
-package dev.a.a01.userJoin;
+package dev.member.a01.userJoin;
 
 import java.sql.SQLException;
 
@@ -8,4 +8,5 @@ public interface UserJoinService {
     int userJoinSave (UserJoinVo vo)throws  SQLException;
 
     String userInsert(UserJoinVo vo) throws SQLException;
+    public UserJoinVo encryptionPassWord(String vo);
 }

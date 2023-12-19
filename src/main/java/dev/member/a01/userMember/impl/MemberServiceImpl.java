@@ -1,8 +1,8 @@
-package dev.a.a01.userMember.impl;
+package dev.member.a01.userMember.impl;
 
-import dev.a.a01.userMember.MemberService;
-import dev.a.a01.userMember.MemberVo;
-import dev.a.a01.userMember.mappers.MemberDao;
+import dev.member.a01.userMember.MemberService;
+import dev.member.a01.userMember.MemberVo;
+import dev.member.a01.userMember.mappers.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

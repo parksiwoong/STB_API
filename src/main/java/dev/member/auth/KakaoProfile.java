@@ -1,4 +1,4 @@
-package dev.a.a01.auth;
+package dev.member.auth;
 
 import lombok.Data;
 
