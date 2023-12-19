@@ -30,15 +30,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/*").permitAll()  //url정의 permitAll 로그인없이도 접근가능
+                .antMatchers("/*").permitAll()                  //url정의 permitAll 로그인없이도 접근가능
                 .anyRequest()
-                .authenticated()       //("/", "/home") 그밖에 어떤 요청이 와도 .authenticated() 반드시 로그인을 해야만 볼 수 있음
+                .authenticated()                                //("/", "/home") 그밖에 어떤 요청이 와도 .authenticated() 반드시 로그인을 해야만 볼 수 있음
                 .and()
             .formLogin()
                 .loginPage("/member/userLogin")                //("/", "/home")외에 들어왔을때 이 페이지로 자동으로 페이지 이동함
-                .permitAll()                        //로그인 되지 않은 사용자도 ("/login") 에 접근 할 수 있게permitAll() 해줌
+                .permitAll()                                   //로그인 되지 않은 사용자도 ("/login") 에 접근 할 수 있게permitAll() 해줌
                 .and()
-            .logout()                               //permitAll() 누구나 로그아웃 할 수 있도록
+            .logout()                                          //permitAll() 누구나 로그아웃 할 수 있도록
                 .permitAll();
     }
 

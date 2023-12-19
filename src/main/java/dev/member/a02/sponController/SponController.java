@@ -1,4 +1,4 @@
-package dev.a.a02.sponController;
+package dev.member.a02.sponController;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

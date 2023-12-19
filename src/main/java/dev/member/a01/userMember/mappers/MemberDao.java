@@ -1,6 +1,6 @@
-package dev.a.a01.userMember.mappers;
+package dev.member.a01.userMember.mappers;
 
-import dev.a.a01.userMember.MemberVo;
+import dev.member.a01.userMember.MemberVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;

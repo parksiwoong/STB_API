@@ -1,8 +1,8 @@
-package dev.a.a01.userJoin.impl;
+package dev.member.a01.userJoin.impl;
 
-import dev.a.a01.userJoin.UserJoinService;
-import dev.a.a01.userJoin.UserJoinVo;
-import dev.a.a01.userJoin.mappers.UserJoinDao;
+import dev.member.a01.userJoin.UserJoinService;
+import dev.member.a01.userJoin.UserJoinVo;
+import dev.member.a01.userJoin.mappers.UserJoinDao;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,12 +66,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 
         //중복 가입 확인 END
 
-        //비밀번호 암호화
-        if(!StringUtils.isEmpty(vo.getUserPwd())){
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            log.info( vo.getUserPwd() + "<-@@@@@@@@@ in vo.getUserPwd() ");
-            vo.setUserPwd(encoder.encode(vo.getUserPwd()));
-        }
+        encryptionPassWord(vo.getUserPwd());
+
         log.info( vo.getUserPwd() + "<-@@@@@@@@@ out vo.getUserPwd() ");
 
         log.info(vo + "#########");
@@ -81,4 +77,19 @@ public class UserJoinServiceImpl implements UserJoinService {
         resultSn = vo.getUserSn();
         return resultSn;
     }
+
+
+    /* 비밀번호 암호화 BCryptPasswordEncoder */
+    public UserJoinVo encryptionPassWord(String passWord){
+        UserJoinVo vo = new UserJoinVo();
+        vo.setUserPwd(passWord);
+        //비밀번호 암호화
+        if(!StringUtils.isEmpty(vo.getUserPwd())){
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            log.info( vo.getUserPwd() + "<-@@@@@@@@@ in vo.getUserPwd() ");
+            vo.setUserPwd(encoder.encode(vo.getUserPwd()));
+        }
+        return vo;
+    }
+
 }

@@ -1,4 +1,4 @@
-package dev.a.a01.userMember;
+package dev.member.a01.userMember;
 
 
 import java.util.HashMap;

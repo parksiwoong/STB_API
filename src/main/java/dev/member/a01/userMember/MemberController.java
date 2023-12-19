@@ -1,10 +1,8 @@
-package dev.a.a01.userMember;
+package dev.member.a01.userMember;
 
-import dev.a.a01.userMember.impl.MemberServiceImpl;
+import dev.member.a01.userMember.impl.MemberServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.juli.logging.LogFactory;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +39,8 @@ public class MemberController {
      * 로그인
      * @param map
      * @param vo
+     * @throws SQLException
+     * @since 2023.05.23
      * */
     @RequestMapping("/user")
     public ModelAndView _members(Map map, MemberVo vo) throws Exception {
@@ -51,7 +52,14 @@ public class MemberController {
     }
 
     /**
-     * 로그인 아이디체크비교 */
+     * 로그인 아이디 비교 체크
+     * @param vo
+     * @param req
+     * @param mv
+     *
+     * @throws SQLException
+     * @since 2023.05.23
+     * */
     public ModelAndView _loginChackCompare(MemberVo vo, HttpServletRequest req, ModelMap mv)throws IOException {
         HashMap result = (HashMap)service.loginCheckCompare(vo);
 

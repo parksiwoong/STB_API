@@ -1,16 +1,19 @@
-package dev.a.a01.userJoin;
+package dev.member.a01.userJoin;
 
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
+import java.util.Date;
 import java.util.List;
 
 @Data
 @Alias("UserJoinVo")
 public class UserJoinVo {
     private List<UserJoinVo> lists;
-    private String groupNm;         //유저그룹명
+    private Long Id;                //카카오ID
     private String userSn;          //사용자순번
+    private String userEmail;       //이메일
+    private String groupNm;         //유저그룹명
     private String userId;          //사용자 아이디
     private String userPwd;         //사용자 비밀번호
     private String userNm;          // 사용자이름
@@ -23,6 +26,6 @@ public class UserJoinVo {
     private String realAddrDtl;     // 상세주소
     private String wiAddrUpdtDt;    // 최종수정일
     private String addrUpdtDt;      // 주소수정일
-
+    private Date loginTime;          // 로그인 시간
 
 }
