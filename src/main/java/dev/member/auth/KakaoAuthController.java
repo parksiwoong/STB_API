@@ -25,7 +25,7 @@ import java.util.UUID;
 @Slf4j
 @Controller
 @RequestMapping("/auth")
-public class KakaoAuth {
+public class KakaoAuthController {
 
     @Resource(name = "userJoinService")
     UserJoinService userJoinService;
@@ -120,11 +120,22 @@ public class KakaoAuth {
         userVo.setUserPwd(tmp);
         log.info("user 정보 id : {}",userVo.toString());
 
+        /*_todo 호출 한곳에 돌려주고 아이디 중복확인 해야함 */
+        //아이디 조회
+        int joinCountId = userJoinService.checkdUplicationUserId(userVo);
+        //유저 순번 조회
+        UserJoinVo SelectUserSn = userJoinService.findUserSn(userVo);
+
         /*회원찾기 이메일과 이름*/
+        if (joinCountId > 0 &&  "".equals(SelectUserSn.getUserSn())){
+            /* 아이디 있음 */
+            log.info(" 아이디가 있습니다. ");
+        }else{
+            /*회원이 없으면 가입 */
+            userJoinService.userInsert(userVo);
+        }
 
-        /*회원이 없으면 가입 */
-       /* service.userInsert(userVo);*/
-
+        /*_todo 호출 한곳에 돌려주고 아이디 중복확인 해야함 */
         return responseProFile.getBody();
     }
 
