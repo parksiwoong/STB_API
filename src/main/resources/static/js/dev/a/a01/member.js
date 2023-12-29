@@ -13,7 +13,7 @@ $(document).ready(function (){
             return false;
         }
         /* 아이디 유무 검사 */
-        fn_callAjax("/userJoin/checkDuplication",param,{
+        fn_callAjax("/userJoin/checkdUplication",param,{
             successCallback: function (data){
                 if(data.result > 0){
                     alert("이미 사용중인 아이디입니다.");

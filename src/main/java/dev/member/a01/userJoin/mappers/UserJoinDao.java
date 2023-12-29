@@ -8,14 +8,12 @@ import java.util.HashMap;
 
 @Mapper
 public interface UserJoinDao {
-    int checkDuplicationUserId(UserJoinVo vo)throws SQLException;
-    HashMap userJoinSave(UserJoinVo vo)throws  SQLException;
-
+    int checkdUplicationUserId(UserJoinVo vo)throws SQLException;
     //유저 중복확인
-    HashMap findUserSn(UserJoinVo vo)throws SQLException;
+    UserJoinVo findUserSn(UserJoinVo vo)throws SQLException;
 
     //유저 순번 생성
     UserJoinVo userSelect(UserJoinVo vo)throws SQLException;
-
+    /* 사용자 등록 */
     int userInsert(UserJoinVo vo);
 }

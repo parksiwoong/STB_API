@@ -37,24 +37,29 @@ public class UserJoinController {
     }
 
 
-    /** 아이디 중복체크 */
+    /**
+     * 사용자 아이디 중복체크
+     * @param vo
+     * @param map
+     * @since 23.05.28
+     * */
     @ResponseBody
-    @RequestMapping("/checkDuplication")
-    public HashMap<String,Object> _checkDuplication(UserJoinVo vo, ModelMap map)throws SQLException {
+    @RequestMapping("/checkdUplication")
+    public HashMap<String,Object> _checkdUplication(UserJoinVo vo, ModelMap map)throws SQLException {
         HashMap<String, Object> hm = new HashMap<String, Object>();
-        int result = service.checkDuplicationUserId(vo);
+        int result = service.checkdUplicationUserId(vo);
          map.addAttribute("result",result);
         hm.put("result",result);
         return hm;
     }
 
     /**
-     * 회원가입
+     * 사용자 회원가입
      * @param request
      * @param redirct
      * @param vo
      * @param session
-     *
+     * @since 23.05.28
      * */
     @RequestMapping("/memberSave")
     public ModelAndView _userJoinSave(HttpServletRequest request, RedirectAttributes redirct, UserJoinVo vo, HttpSession session) throws Exception {

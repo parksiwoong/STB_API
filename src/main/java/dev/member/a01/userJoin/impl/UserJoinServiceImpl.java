@@ -28,20 +28,15 @@ public class UserJoinServiceImpl implements UserJoinService {
 //    }
 
     @Override
-    public int checkDuplicationUserId(UserJoinVo vo) throws SQLException {
-        return dao.checkDuplicationUserId(vo);
+    public int checkdUplicationUserId(UserJoinVo vo) throws SQLException {
+        return dao.checkdUplicationUserId(vo);
     }
-    /** 사용자 정보 저장 */
-    @Override
-    public int userJoinSave(UserJoinVo vo) throws SQLException {
-        String resultSn = "";
-
-        //중복 가입 확인
-        HashMap hm = dao.findUserSn(vo);
-//                dao.userJoinSave(vo);
-
-        return 0;
+    /* 사용자 순번 찾기 */
+    public UserJoinVo findUserSn(UserJoinVo vo)throws SQLException{
+        vo = dao.findUserSn(vo);
+        return vo;
     }
+
     public String userInsert(UserJoinVo vo) throws SQLException{
 
         String resultSn  = "";
@@ -52,8 +47,8 @@ public class UserJoinServiceImpl implements UserJoinService {
 
 
         log.info("jade - dao: " + dao.userSelect(vo).getUserSn());
-
-        vo.setUserSn(dao.userSelect(vo).getUserSn());
+        // _todo null 로 들어가서 에러 뜸 고쳐야함 (그리고 활성화해야 함)
+   //      vo.setUserSn(dao.userSelect(vo).getUserSn());
 
         //중복 가입 확인 ci값으로 확인
         /*
